@@ -1,0 +1,14 @@
+
+<div class="text-inline">
+  <h1><%= @article.title %></h1>
+  <%= link_to '<i class="fa fa-undo" aria-hidden="true"> Back to list</i>'.html_safe, articles_path %>
+</div>
+
+<p><%= @article.content %></p>
+
+<div class="text-inline">
+  <%= link_to '<i class="fa fa-pencil" aria-hidden="true"> Edit this article</i>'.html_safe, edit_article_path(@article.id) %>
+  <%= link_to '<i class="fa fa-trash" aria-hidden="true"> Delete this article</i>'.html_safe, article_path(@article.id), method: "DELETE" %>
+</div>
+
+

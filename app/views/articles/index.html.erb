@@ -1,0 +1,12 @@
+<h1>Latest article</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article.id) %>
+    <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, article_path(article.id), method: "DELETE" %>
+    <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_article_path(article.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to '<i class="fa fa-file-text-o" aria-hidden="true"> Write new article</i>'.html_safe, new_article_path %>
